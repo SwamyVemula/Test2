@@ -1,6 +1,6 @@
 New-Item -ItemType directory -Path C:\ices
-net start MSSQLSERVER
-sc config SQLBrowser start= auto
-sc config SQLSERVERAGENT start= auto
-net start SQLBrowser
-net start SQLSERVERAGENT
+Stop-Service -Name 'MSSQLSERVER'
+Start-Service -Name 'SQLBrowser'
+Start-Service -Name 'SQLSERVERAGENT'
+Start-Service -Name 'MSSQLSERVER'
+
